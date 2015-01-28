@@ -42,7 +42,7 @@ public class GameManager {
     }
 
     public void play() throws MovePairUndefinedException {
-        GameResult result = ruleSource.applyRule(move1, move2);
+        IGameResult result = ruleSource.applyRule(move1, move2);
         renderer.displayFinalResult(player1, player2, result);
     }
 

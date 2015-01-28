@@ -4,5 +4,5 @@ import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
 
 public interface IRuleSource {
-    public GameResult applyRule(Move move1, Move move2) throws MovePairUndefinedException;
+    public IGameResult applyRule(Move move1, Move move2) throws MovePairUndefinedException;
 }
