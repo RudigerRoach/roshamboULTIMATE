@@ -12,7 +12,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws MovePairUndefinedException, EmptyFileException, InvalidRuleFormatException, IOException, InvalidResultException {
         GameManager gm = new GameManager();
-        gm.initialise("Moves.txt", "Rules.txt");
+        gm.initialise("Moves2.txt", "Rules2.txt");
         gm.gatherInformation();
         gm.getMoves();
         gm.play();

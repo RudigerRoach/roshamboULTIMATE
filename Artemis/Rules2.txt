@@ -1,0 +1,5 @@
+Yashu, Yashu, Draw, Too-much-Awesome
+Rudi, Rudi, Draw, Too-much-Awesome
+Edward, Edward, Draw, Too-much-Awesome
+Rudi, Edward, Lose, Edward
+Yashu, Edward, Lose, Edward
