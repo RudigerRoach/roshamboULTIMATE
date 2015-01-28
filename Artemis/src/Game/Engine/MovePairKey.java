@@ -1,5 +1,7 @@
 package Game.Engine;
 
+import Game.Moves.Move;
+
 public class MovePairKey
 {
     private Move move1;
