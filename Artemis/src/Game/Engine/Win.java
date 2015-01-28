@@ -2,15 +2,15 @@ package Game.Engine;
 
 public class Win implements IGameResult
 {
-    String message;
+    String resultMessage;
     
     public Win(String message)
     {
-        this.message = message;
+        this.resultMessage = "Win, " + message;
     }
     
     public String getResult()
     {
-        throw new UnsupportedOperationException();
+        return resultMessage;
     }
 }

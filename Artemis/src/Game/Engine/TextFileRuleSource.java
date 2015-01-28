@@ -42,7 +42,7 @@ public class TextFileRuleSource implements IRuleSource
         }
         
         MovePairKey movePairKeyReversed = new MovePairKey(move2, move1);
-        if (!rules.containsKey(movePairKey))
+        if (!rules.containsKey(movePairKeyReversed))
         {
             throw new MovePairUndefinedException();
         }

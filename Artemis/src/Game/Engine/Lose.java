@@ -2,15 +2,15 @@ package Game.Engine;
 
 public class Lose implements IGameResult
 {
-    String message;
+    private String resultMessage;
     
     public Lose(String message)
     {
-        this.message = message;
+        this.resultMessage = "Lose, " + message;
     }
     
     public String getResult()
     {
-        throw new UnsupportedOperationException();
+        return resultMessage;
     }
 }
