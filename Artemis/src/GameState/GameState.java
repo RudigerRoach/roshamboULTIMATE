@@ -4,6 +4,8 @@ import Game.Engine.IGameResult;
 import Game.Moves.Move;
 import Game.Player.IPlayer;
 
+import java.util.List;
+
 public class GameState {
     private IPlayer player1;
     private IPlayer player2;
@@ -11,6 +13,7 @@ public class GameState {
     private Move player2Move;
     private IGameResult gameResult;
     private IPlayer winner;
+    private List<Move> possibleMoves;
 
     public void setGameResult(IGameResult gameResult) {
         this.gameResult = gameResult;
@@ -59,5 +62,12 @@ public class GameState {
     public Move getPlayer2Move() {
         return player2Move;
     }
-    
+
+    public void setPossibleMoves(List<Move> possibleMoves) {
+        this.possibleMoves = possibleMoves;
+    }
+
+    public List<Move> getPossibleMoves() {
+        return possibleMoves;
+    }
 }

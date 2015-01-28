@@ -1,9 +1,17 @@
 package Game.Moves;
 
 public class Move {
-    String moveName;
+    private String moveName;
     public Move(String name){
         moveName = name;
+    }
+
+    public void setMoveName(String moveName) {
+        this.moveName = moveName;
+    }
+
+    public String getMoveName(){
+        return this.moveName;
     }
 
     @Override
