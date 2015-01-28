@@ -1,6 +1,7 @@
 package Game.Engine;
 
 import Exceptions.EmptyFileException;
+import Exceptions.InvalidResultException;
 import Exceptions.InvalidRuleFormatException;
 import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
@@ -27,7 +28,7 @@ public class GameManager {
     Boolean computer;
     IPlayer player1, player2;
     Move move1,move2;
-    public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException {
+    public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException, InvalidResultException {
         gamestate = new GameState();
         renderer = new CLIRenderer();
 
@@ -41,7 +42,7 @@ public class GameManager {
     }
 
     public void play() throws MovePairUndefinedException {
-        GameResult result = ruleSource.applyRule(move1, move2);
+        IGameResult result = ruleSource.applyRule(move1, move2);
         renderer.displayFinalResult(player1, player2, result);
     }
 

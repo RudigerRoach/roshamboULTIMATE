@@ -1,5 +1,6 @@
 package Game.Engine;
 
+import Exceptions.InvalidResultException;
 import Exceptions.InvalidRuleFormatException;
 import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
@@ -14,8 +15,7 @@ public class TextFileRuleSource implements IRuleSource
 {
     private Map<MovePairKey, IGameResult> rules;
     
-    public TextFileRuleSource(IFileReader ruleFileReader, IMoveSource moveSource) throws FileNotFoundException, IOException, InvalidRuleFormatException
-    {
+    public TextFileRuleSource(IFileReader ruleFileReader, IMoveSource moveSource) throws FileNotFoundException, IOException, InvalidRuleFormatException, InvalidResultException {
         String  ruleLine;
         rules = new HashMap<MovePairKey, IGameResult>();
 
