@@ -10,4 +10,5 @@ public interface IPlayer
     public void setMove(Move playerMove);
     public Move getMove(Collection<Move> possibleMoves);
     public String getName();
+    public String getMoveName();
 }

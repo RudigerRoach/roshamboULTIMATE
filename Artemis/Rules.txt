@@ -4,8 +4,8 @@ Lizard, Rock, Lose, Crushes
 Scissors, Rock, Lose, Crushes
 Lizard, Spock, Win, Poisons
 Lizard, Paper, Win, Eats
-Spock, Lizzard, Lose, Poisons
-Paper, Lizzard, Lose, Eats
+Spock, Lizard, Lose, Poisons
+Paper, Lizard, Lose, Eats
 Spock, Scissors, Win, Smashes
 Spock, Rock, Win, Vapourizes
 Scissors, Spock, Lose, Smashes
@@ -18,3 +18,8 @@ Paper, Rock, Win, Covers
 Paper, Spock, Win, Disproves
 Rock, Paper, Lose, Covers
 Spock, Paper, Lose, Disproves
+Lizard, Lizard, Draw, Blows-Up-Universe
+Rock, Rock, Draw, Stone-Age
+Spock, Spock, Draw, do-You-Even-Spock
+Paper, Paper, Draw, Save-The-Trees
+Scissors,Scissors, Draw, NO-EDWARD!!!!dont-show-them-that-:P

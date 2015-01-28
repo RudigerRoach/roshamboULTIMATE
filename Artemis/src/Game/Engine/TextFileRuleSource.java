@@ -21,7 +21,7 @@ public class TextFileRuleSource implements IRuleSource
 
         while ((ruleLine = ruleFileReader.readLine()) != null)
         {
-            StringTokenizer tokenizer = new StringTokenizer(ruleLine, ",");
+            StringTokenizer tokenizer = new StringTokenizer(ruleLine, ", ");
             if (tokenizer.countTokens() != 4)
             {
                 throw new InvalidRuleFormatException();
@@ -41,11 +41,11 @@ public class TextFileRuleSource implements IRuleSource
             return rules.get(movePairKey);
         }
         
-        MovePairKey movePairKeyReversed = new MovePairKey(move2, move1);
-        if (!rules.containsKey(movePairKeyReversed))
-        {
-            throw new MovePairUndefinedException();
-        }
+//        MovePairKey movePairKeyReversed = new MovePairKey(move2, move1);
+//        if (!rules.containsKey(movePairKeyReversed))
+//        {
+//            throw new MovePairUndefinedException();
+//        }
 
         return rules.get(movePairKey);
     }

@@ -31,4 +31,9 @@ public class HumanPlayer implements IPlayer {
     {
         return playerName;
     }
+
+    @Override
+    public String getMoveName() {
+        return playerMove.getMoveName();
+    }
 }

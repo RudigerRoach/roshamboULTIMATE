@@ -6,7 +6,7 @@ public class Draw implements IGameResult
     
     public Draw(String message)
     {
-        this.resultMessage = "Draw, " + resultMessage;
+        this.resultMessage = "Draw, " + message;
     }
     
     public String getResult()
