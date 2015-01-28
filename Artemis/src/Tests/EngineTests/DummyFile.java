@@ -8,10 +8,12 @@ public class DummyFile implements IFileReader
 {
     private List<String> fileLines;
     private int          filePosition;
+    private String       fileName;
     
-    public DummyFile(List<String> fileLines)
+    public DummyFile(List<String> fileLines, String fileName)
     {
         this.fileLines = fileLines;
+        this.fileName  = fileName;
         filePosition = 0;
     }
 
@@ -23,5 +25,10 @@ public class DummyFile implements IFileReader
         }
 
         return fileLines.get(filePosition++);
+    }
+
+    public String getFileName()
+    {
+        return fileName;
     }
 }
