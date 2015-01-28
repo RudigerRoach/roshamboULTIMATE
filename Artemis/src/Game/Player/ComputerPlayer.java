@@ -1,7 +1,6 @@
 package Game.Player;
 
 import Game.Moves.Move;
-
 import java.util.Random;
 import java.util.Set;
 

@@ -15,6 +15,10 @@ public class GameState {
     private IPlayer winner;
     private List<Move> possibleMoves;
 
+    public String getPlayer1Name(){
+        return player1.getName();
+    }
+
     public void setGameResult(IGameResult gameResult) {
         this.gameResult = gameResult;
     }
