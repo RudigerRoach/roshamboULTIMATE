@@ -4,18 +4,18 @@ import java.io.*;
 
 public class ConfigFileReader implements IFileReader
 {
-    BufferedRedeader concreteReader;
+    BufferedReader concreteConfigReader;
 
-    FileReader(String fileName)
+    ConfigFileReader(String fileName) throws FileNotFoundException
     {
-        File           ruleFile       = new File(fileName);
-        FileReader     fileReader     = new FileReader(ruleFile);
-        BufferedReader concreteReader = new BufferedReader(ruleFileReader);
+        File           configFile           = new File(fileName);
+        FileReader     configFileReader     = new FileReader(configFile);
+        concreteConfigReader = new BufferedReader(configFileReader);
     }
 
-    String readLine()
+    public String readLine() throws IOException
     {
-        return concreteReader.readLine();
+        return concreteConfigReader.readLine();
     }
 }
  
