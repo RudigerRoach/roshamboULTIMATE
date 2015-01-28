@@ -1,6 +1,7 @@
 package Game.Engine;
 
 import Exceptions.EmptyFileException;
+import Exceptions.InvalidResultException;
 import Exceptions.InvalidRuleFormatException;
 import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
@@ -24,7 +25,7 @@ public class GameManager {
     IFileReader RulefileReader;
     IRuleSource ruleSource;
 
-    public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException {
+    public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException, InvalidResultException {
         gamestate = new GameState();
         renderer = new CLIRenderer();
 

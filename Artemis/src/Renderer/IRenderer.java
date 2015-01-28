@@ -4,6 +4,7 @@ import Game.Engine.IGameResult;
 import Game.Moves.Move;
 import Game.Player.IPlayer;
 
+import java.io.IOException;
 import java.util.Set;
 
 /**
@@ -12,9 +13,9 @@ import java.util.Set;
 public interface IRenderer {
     void displayWelcomeScreen();
 
-    Boolean confirmComputerPlayer();
+    Boolean confirmComputerPlayer() throws IOException;
 
-    String requestPlayerName();
+    String requestPlayerName() throws IOException;
 
     Move requestMove(Set<String> possibleMovesStrings);
 

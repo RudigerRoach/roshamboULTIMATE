@@ -5,6 +5,9 @@ import Game.Moves.Move;
 import Game.Player.IPlayer;
 import GameState.GameState;
 
+import java.io.DataInputStream;
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.Set;
 
 public class CLIRenderer implements IRenderer {
@@ -22,9 +25,9 @@ public class CLIRenderer implements IRenderer {
         populatePrivates(gameState);
         printBanner();
         printMovesStatus();
-        if (winner.getMove().getMoveName().compareTo("") != 0){
+        /*if (winner.getMove().getMoveName().compareTo("") != 0){
 
-        }
+        }*/
     }
 
     private void populatePrivates(GameState gameState){
@@ -56,22 +59,42 @@ public class CLIRenderer implements IRenderer {
 
     @Override
     public void displayWelcomeScreen() {
-
+        System.out.println("****************************************");
+        System.out.println("    You are now playing Roshambo.");
+        System.out.println("****************************************");
     }
 
     @Override
-    public Boolean confirmComputerPlayer() {
-        return null;
+    public Boolean confirmComputerPlayer() throws IOException {
+        System.out.println("Play against :");
+        System.out.println("1. The Computer");
+        System.out.println("2. Another player");
+        DataInputStream in = new DataInputStream(System.in);
+        char c = in.readChar();
+        if(((Character.toString(c)).compareTo("1")) == 0){
+            return true;
+        }
+        return false;
     }
 
     @Override
-    public String requestPlayerName() {
-        return null;
+    public String requestPlayerName(){
+        System.out.println("please provide a player name: ");
+        String playerName = System.console().readLine();
+        return playerName;
     }
 
     @Override
     public Move requestMove(Set<String> possibleMovesStrings) {
-        return null;
+        System.out.println("Please choose your move number: ");
+        String[] moves = (String[])possibleMovesStrings.toArray();
+        for (int i = 0; i < moves.length; i++){
+            System.out.println(i+". "+moves[i]);
+        }
+        String move = (System.console().readLine()).substring(0,0);
+        int pos = (Integer.parseInt(move));
+        Move newMove = new Move(moves[pos]);
+        return newMove;
     }
 
     @Override
