@@ -5,7 +5,7 @@ import Game.Engine.IFile;
 import Game.Logging.Log;
 import org.junit.Test;
 
-public class DummyFile implements IFile
+public class DummyFile implements IFileReader
 {
     private List<String> fileLines;
     private int          filePosition;
