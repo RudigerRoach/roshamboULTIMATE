@@ -1,4 +1,4 @@
-package Game.Engine;
+package Exceptions;
 
 public class MovePairUndefinedException extends Exception
 {

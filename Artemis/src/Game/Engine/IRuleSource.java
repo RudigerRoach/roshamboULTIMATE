@@ -1,5 +1,6 @@
 package Game.Engine;
 
+import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
 
 public interface IRuleSource {
