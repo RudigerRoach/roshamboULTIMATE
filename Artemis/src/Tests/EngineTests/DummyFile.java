@@ -1,9 +1,8 @@
 package Tests.EngineTests;
 
+import Game.Engine.IFileReader;
+
 import java.util.List;
-import Game.Engine.IFile;
-import Game.Logging.Log;
-import org.junit.Test;
 
 public class DummyFile implements IFileReader
 {
@@ -16,7 +15,7 @@ public class DummyFile implements IFileReader
         filePosition = 0;
     }
 
-    public String getLine()
+    public String readLine()
     {
         if (filePosition >= fileLines.size())
         {
