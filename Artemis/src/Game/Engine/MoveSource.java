@@ -7,4 +7,9 @@ public class MoveSource implements IMoveSource {
     public Move getMove() {
         return null;
     }
+
+    @Override
+    public Move getMoveFromName(String name) {
+        return null;
+    }
 }

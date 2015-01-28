@@ -1,8 +1,8 @@
 package Tests.EngineTests;
 
+import Game.Engine.GameResult;
+import Game.Logging.Log;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class GameResultTest {
 
