@@ -2,12 +2,32 @@ package Game.Player;
 
 import Game.Moves.Move;
 
-/**
- * Created by yashu.tanna on 2015-01-28.
- */
+import java.util.Set;
+
 public class HumanPlayer implements IPlayer {
+    private String playerName;
+    private Move   playerMove;
+
+    public HumanPlayer(String playerName)
+    {
+        this.playerName = playerName;
+    }
+    
     @Override
-    public Move getMove() {
+    public void setMove(Move playerMove)
+    {
+        this.playerMove = playerMove;
+    }
+    
+    @Override
+    public Move getMove(Set<Move> possibleMoves)
+    {
         return null;
+    }
+
+    @Override
+    public String getName()
+    {
+        return playerName;
     }
 }

@@ -2,15 +2,15 @@ package Game.Engine;
 
 public class Draw implements IGameResult
 {
-    String message;
+    private String resultMessage;
     
     public Draw(String message)
     {
-        this.message = message;
+        this.resultMessage = "Draw, " + resultMessage;
     }
     
     public String getResult()
     {
-        throw new UnsupportedOperationException();
+        return resultMessage;
     }
 }

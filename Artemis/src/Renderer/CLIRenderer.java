@@ -7,8 +7,7 @@ import GameState.GameState;
 
 public class CLIRenderer implements IRenderer {
     private GameState gameState;
-    private String player1Name;
-    private String player2Name;
+
 
     private IPlayer player1;
     private IPlayer player2;
