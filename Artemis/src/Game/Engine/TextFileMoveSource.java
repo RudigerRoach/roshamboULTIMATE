@@ -4,9 +4,8 @@ import Exceptions.EmptyFileException;
 import Game.Moves.Move;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import java.lang.reflect.Array;
+import java.util.*;
 
 public class TextFileMoveSource implements IMoveSource {
     IFileReader MoveFile;
@@ -35,5 +34,15 @@ public class TextFileMoveSource implements IMoveSource {
         }
         if(moveMap.size() == 0)
             throw new EmptyFileException();
+    }
+
+    public Set<String> getPossibleMovesStrings()
+    {
+        return moveMap.keySet();
+    }
+
+    public Collection<Move> getPossibleMoves()
+    {
+        return moveMap.values();
     }
 }
