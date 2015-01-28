@@ -1,5 +1,6 @@
 package Game.Engine;
 
+import Exceptions.InvalidRuleFormatException;
 import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
 
@@ -7,6 +8,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.StringTokenizer;
 
 public class TextFileRuleSource implements IRuleSource
 {
@@ -19,15 +21,15 @@ public class TextFileRuleSource implements IRuleSource
 
         while ((ruleLine = ruleFileReader.readLine()) != null)
         {
-            String[] values = ruleLine.split(",");
-            if (values.length != 4)
+            StringTokenizer tokenizer = new StringTokenizer(ruleLine, ",");
+            if (tokenizer.countTokens() != 4)
             {
                 throw new InvalidRuleFormatException();
             }
-            Move        move1 = moveSource.getMoveFromName(values[0]);
-            Move        move2 = moveSource.getMoveFromName(values[1]);
+            Move        move1 = moveSource.getMoveFromName(tokenizer.nextToken());
+            Move        move2 = moveSource.getMoveFromName(tokenizer.nextToken());
             MovePairKey key   = new MovePairKey(move1, move2);
-            rules.put(key, GameResultFactory.parseGameResult(values[2], values[3]));
+            rules.put(key, GameResultFactory.parseGameResult(tokenizer.nextToken(), tokenizer.nextToken()));
         }
     }
     

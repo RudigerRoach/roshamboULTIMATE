@@ -1,8 +1,8 @@
-package Game.Engine;
+package Exceptions;
 
 public class InvalidRuleFormatException extends Exception {
 
-    InvalidRuleFormatException()
+    public InvalidRuleFormatException()
     {
     }
     // TODO

@@ -1,13 +1,12 @@
 package Tests.EngineTests;
 
+import Exceptions.InvalidRuleFormatException;
 import Game.Engine.*;
 import org.junit.Test;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
-import static org.junit.Assert.*;
 
 public class TextFileRuleSourceTest
 {
