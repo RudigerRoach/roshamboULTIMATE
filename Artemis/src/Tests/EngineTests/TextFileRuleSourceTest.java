@@ -15,7 +15,7 @@ public class TextFileRuleSourceTest
     {
         List<String> fileLines = new ArrayList<String>();
         fileLines.add("notehutn");
-        IFileReader fileReader = new DummyFile(fileLines);
+        IFileReader fileReader = new DummyFile(fileLines, "test.txt");
         IMoveSource moveSource = null;
 
         IRuleSource ruleSource = new TextFileRuleSource(fileReader, moveSource);

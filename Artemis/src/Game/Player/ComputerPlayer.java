@@ -1,6 +1,8 @@
 package Game.Player;
 
 import Game.Moves.Move;
+
+import java.util.Collection;
 import java.util.Random;
 import java.util.Set;
 
@@ -20,7 +22,7 @@ public class ComputerPlayer implements IPlayer
     }
     
     @Override
-    public Move getMove(Set<Move> possibleMoves)
+    public Move getMove(Collection<Move> possibleMoves)
     {
         return ((Move[])(possibleMoves.toArray()))[randomNumberGen.nextInt(possibleMoves.size())];
     }

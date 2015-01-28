@@ -51,9 +51,9 @@ public class GameManager {
         if(computer)
             move2 = player2.getMove(moveSource.getPossibleMoves());
         else
-            move2 = renderer.requestMove(moveSource.getPossibleMoves());
+            move2 = renderer.requestMove(moveSource.getPossibleMovesStrings());
         player2.setMove(move2);
-        IGameResult result = ruleSource.applyRule(player1.getMove(), player2.getMove());
+        IGameResult result = ruleSource.applyRule(move1, move2);
         renderer.displayFinalResult(player1, player2, result);
     }
 }

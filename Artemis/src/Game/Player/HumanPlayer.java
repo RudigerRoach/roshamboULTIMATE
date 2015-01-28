@@ -2,6 +2,7 @@ package Game.Player;
 
 import Game.Moves.Move;
 
+import java.util.Collection;
 import java.util.Set;
 
 public class HumanPlayer implements IPlayer {
@@ -20,9 +21,9 @@ public class HumanPlayer implements IPlayer {
     }
     
     @Override
-    public Move getMove(Set<Move> possibleMoves)
+    public Move getMove(Collection<Move> possibleMoves)
     {
-        return null;
+        return playerMove;
     }
 
     @Override

@@ -5,6 +5,8 @@ import Game.Moves.Move;
 import Game.Player.IPlayer;
 import GameState.GameState;
 
+import java.util.Set;
+
 public class CLIRenderer implements IRenderer {
     private GameState gameState;
 
@@ -50,5 +52,30 @@ public class CLIRenderer implements IRenderer {
         }else if (player1Move.getMoveName().compareTo("") != 0){
             System.out.println("Waiting for your move...");
         }
+    }
+
+    @Override
+    public void displayWelcomeScreen() {
+
+    }
+
+    @Override
+    public Boolean confirmComputerPlayer() {
+        return null;
+    }
+
+    @Override
+    public String requestPlayerName() {
+        return null;
+    }
+
+    @Override
+    public Move requestMove(Set<String> possibleMovesStrings) {
+        return null;
+    }
+
+    @Override
+    public void displayFinalResult(IPlayer player1, IPlayer player2, IGameResult result) {
+
     }
 }
