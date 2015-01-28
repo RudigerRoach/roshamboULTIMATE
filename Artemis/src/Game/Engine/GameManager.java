@@ -8,15 +8,12 @@ import Game.Moves.Move;
 import Game.Player.ComputerPlayer;
 import Game.Player.HumanPlayer;
 import Game.Player.IPlayer;
-import GameState.GameState;
 import Renderer.CLIRenderer;
 import Renderer.IRenderer;
-import org.junit.Rule;
 
 import java.io.IOException;
 
 public class GameManager {
-    private GameState gamestate;
     IRenderer renderer;
 
     IFileReader MoveFileReader;
@@ -29,7 +26,6 @@ public class GameManager {
     IPlayer player1, player2;
     Move move1,move2;
     public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException, InvalidResultException {
-        gamestate = new GameState();
         renderer = new CLIRenderer();
 
         MoveFileReader = new ConfigFileReader(moveFileName);

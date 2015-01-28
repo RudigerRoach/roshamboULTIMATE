@@ -3,11 +3,8 @@ package Renderer;
 import Game.Engine.IGameResult;
 import Game.Moves.Move;
 import Game.Player.IPlayer;
-import GameState.GameState;
 
-import java.io.DataInputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class CLIRenderer implements IRenderer {

@@ -1,16 +1,5 @@
 package Tests.RendererTests;
 
-import Game.Engine.GameResult;
-import Game.Moves.Move;
-import Game.Player.ComputerPlayer;
-import Game.Player.HumanPlayer;
-import Game.Player.IPlayer;
-import GameState.GameState;
-import Renderer.CLIRenderer;
-import org.junit.Test;
-
-import static org.junit.Assert.*;
-
 public class CLIRendererTest {
 /*
     @Test

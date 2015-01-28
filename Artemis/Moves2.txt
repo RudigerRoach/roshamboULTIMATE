@@ -1,3 +1,3 @@
-Yashu
-Rudi
-Edward
+Rock
+Paper
+Scissors
