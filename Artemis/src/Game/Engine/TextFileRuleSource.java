@@ -1,7 +1,7 @@
 package Game.Engine;
 
+import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
-import org.junit.Rule;
 
 import java.util.HashMap;
 import java.util.Map;
