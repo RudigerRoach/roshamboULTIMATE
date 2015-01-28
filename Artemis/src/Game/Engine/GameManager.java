@@ -25,6 +25,9 @@ public class GameManager {
     IFileReader RulefileReader;
     IRuleSource ruleSource;
 
+    Boolean computer;
+    IPlayer player1, player2;
+    Move move1,move2;
     public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException, InvalidResultException {
         gamestate = new GameState();
         renderer = new CLIRenderer();
@@ -36,25 +39,34 @@ public class GameManager {
         ruleSource = new TextFileRuleSource(RulefileReader, moveSource);
 
         renderer.displayWelcomeScreen();
-        Boolean computer = renderer.confirmComputerPlayer();
+    }
+
+    public void play() throws MovePairUndefinedException {
+        GameResult result = ruleSource.applyRule(move1, move2);
+        renderer.displayFinalResult(player1, player2, result);
+    }
+
+    public void getMoves()
+    {
+        move1 = renderer.requestMove(moveSource.getPossibleMovesStrings());
+        player1.setMove(move1);
+        if(computer)
+            move2 = player2.getMove(moveSource.getPossibleMoves());
+        else
+            move2 = renderer.requestMove(moveSource.getPossibleMovesStrings());
+        player2.setMove(move2);
+    }
+
+
+    public void gatherInformation() throws IOException {
+        computer = renderer.confirmComputerPlayer();
         String PlayerName = renderer.requestPlayerName();
-        IPlayer player1 = new HumanPlayer(PlayerName);
-        IPlayer player2;
+        player1 = new HumanPlayer(PlayerName);
         if(computer)
             player2 = new ComputerPlayer();
         else {
             String player2Name = renderer.requestPlayerName();
             player2 = new HumanPlayer(player2Name);
         }
-        Move move1 = renderer.requestMove(moveSource.getPossibleMovesStrings());
-        player1.setMove(move1);
-        Move move2;
-        if(computer)
-            move2 = player2.getMove(moveSource.getPossibleMoves());
-        else
-            move2 = renderer.requestMove(moveSource.getPossibleMovesStrings());
-        player2.setMove(move2);
-        IGameResult result = ruleSource.applyRule(move1, move2);
-        renderer.displayFinalResult(player1, player2, result);
     }
 }
