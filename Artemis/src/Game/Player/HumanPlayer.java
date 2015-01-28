@@ -6,8 +6,26 @@ import Game.Moves.Move;
  * Created by yashu.tanna on 2015-01-28.
  */
 public class HumanPlayer implements IPlayer {
+    private Move move;
+    private String name;
+
     @Override
     public Move getMove() {
-        return null;
+        return move;
+    }
+
+    @Override
+    public void setMove(Move move) {
+        this.move = move;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
 }
