@@ -11,6 +11,6 @@ public class Win implements IGameResult
     
     public String getResult()
     {
-        throw new NotImplementedException();
+        throw new UnsupportedOperationException();
     }
 }
