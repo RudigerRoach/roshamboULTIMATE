@@ -1,8 +1,8 @@
 package Renderer;
 
-import Game.Engine.IGameResult;
+import Game.Engine.GameResult;
 import Game.Moves.Move;
-import Game.Player.IPlayer;
+import Game.Player.Player;
 
 import java.io.IOException;
 import java.util.Set;
@@ -10,7 +10,7 @@ import java.util.Set;
 /**
  * Created by rudiger.roach on 2015-01-28.
  */
-public interface IRenderer {
+public interface Renderer {
     void displayWelcomeScreen();
 
     Boolean confirmComputerPlayer() throws IOException;
@@ -19,5 +19,5 @@ public interface IRenderer {
 
     Move requestMove(Set<String> possibleMovesStrings);
 
-    void displayFinalResult(IPlayer player1, IPlayer player2, IGameResult result);
+    void displayFinalResult(Player player1, Player player2, GameResult result);
 }

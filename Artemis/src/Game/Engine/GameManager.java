@@ -5,31 +5,31 @@ import Exceptions.InvalidResultException;
 import Exceptions.InvalidRuleFormatException;
 import Exceptions.MovePairUndefinedException;
 import Game.Moves.Move;
-import Game.Player.ComputerPlayer;
-import Game.Player.HumanPlayer;
-import Game.Player.IPlayer;
-import Renderer.CLIRenderer;
-import Renderer.IRenderer;
+import Game.Player.ComputerPlayerimpl;
+import Game.Player.HumanPlayerimpl;
+import Game.Player.Player;
+import Renderer.CLIRendererimpl;
+import Renderer.Renderer;
 
 import java.io.IOException;
 
 public class GameManager {
-    IRenderer renderer;
+    Renderer.Renderer renderer;
 
-    IFileReader MoveFileReader;
-    IMoveSource moveSource;
+    FileReader MoveFileReader;
+    MoveSource moveSource;
 
-    IFileReader RulefileReader;
-    IRuleSource ruleSource;
+    FileReader RulefileReader;
+    RuleSource ruleSource;
 
     Boolean computer;
-    IPlayer player1, player2;
+    Player player1, player2;
     Move move1,move2;
     public void initialise(String moveFileName, String ruleFilename) throws IOException, EmptyFileException, InvalidRuleFormatException, MovePairUndefinedException, InvalidResultException {
-        renderer = new CLIRenderer();
+        renderer = new CLIRendererimpl();
 
-        MoveFileReader = new ConfigFileReader(moveFileName);
-        RulefileReader = new ConfigFileReader(ruleFilename);
+        MoveFileReader = new ConfigFileReaderimpl(moveFileName);
+        RulefileReader = new ConfigFileReaderimpl(ruleFilename);
 
         moveSource = new TextFileMoveSource(MoveFileReader);
         ruleSource = new TextFileRuleSource(RulefileReader, moveSource);
@@ -38,7 +38,7 @@ public class GameManager {
     }
 
     public void play() throws MovePairUndefinedException {
-        IGameResult result = ruleSource.applyRule(move1, move2);
+        GameResult result = ruleSource.applyRule(move1, move2);
         renderer.displayFinalResult(player1, player2, result);
     }
 
@@ -57,12 +57,12 @@ public class GameManager {
     public void gatherInformation() throws IOException {
         computer = renderer.confirmComputerPlayer();
         String PlayerName = renderer.requestPlayerName();
-        player1 = new HumanPlayer(PlayerName);
+        player1 = new HumanPlayerimpl(PlayerName);
         if(computer)
-            player2 = new ComputerPlayer();
+            player2 = new ComputerPlayerimpl();
         else {
             String player2Name = renderer.requestPlayerName();
-            player2 = new HumanPlayer(player2Name);
+            player2 = new HumanPlayerimpl(player2Name);
         }
     }
 }

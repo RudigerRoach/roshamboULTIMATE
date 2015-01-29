@@ -4,18 +4,17 @@ import Exceptions.EmptyFileException;
 import Game.Moves.Move;
 
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.*;
 
-public class TextFileMoveSource implements IMoveSource {
-    IFileReader MoveFile;
+public class TextFileMoveSource implements MoveSource {
+    FileReader MoveFile;
     Map<String, Move> moveMap;
     @Override
     public Move getMoveFromName(String name) {
         return moveMap.get(name);
     }
 
-    public TextFileMoveSource(IFileReader _FileReader) throws IOException, EmptyFileException {
+    public TextFileMoveSource(FileReader _FileReader) throws IOException, EmptyFileException {
         MoveFile = _FileReader;
         moveMap = new HashMap<String, Move>();
         generateMoveObjects();

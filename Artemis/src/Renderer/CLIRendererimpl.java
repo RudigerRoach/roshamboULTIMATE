@@ -1,13 +1,13 @@
 package Renderer;
 
-import Game.Engine.IGameResult;
+import Game.Engine.GameResult;
 import Game.Moves.Move;
-import Game.Player.IPlayer;
+import Game.Player.Player;
 
 import java.io.IOException;
 import java.util.*;
 
-public class CLIRenderer implements IRenderer {
+public class CLIRendererimpl implements Renderer.Renderer {
 
 
     @Override
@@ -60,7 +60,7 @@ public class CLIRenderer implements IRenderer {
     }
 
     @Override
-    public void displayFinalResult(IPlayer player1, IPlayer player2, IGameResult result) {
+    public void displayFinalResult(Player player1, Player player2, GameResult result) {
         System.out.println(player1.getName() + " chose: " + player1.getMoveName()+" vs "+player2.getName() + " chose: " + player2.getMoveName());
         System.out.println(result.getResult());
     }

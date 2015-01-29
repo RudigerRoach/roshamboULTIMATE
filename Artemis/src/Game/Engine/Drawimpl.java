@@ -1,12 +1,12 @@
 package Game.Engine;
 
-public class Draw implements IGameResult
+public class Drawimpl implements GameResult
 {
     private String resultMessage;
     
-    public Draw(String message)
+    public Drawimpl(String message)
     {
-        this.resultMessage = "Draw, " + message;
+        this.resultMessage = "Drawimpl, " + message;
     }
     
     public String getResult()

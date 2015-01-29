@@ -5,14 +5,13 @@ import Game.Moves.Move;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Random;
-import java.util.Set;
 
-public class ComputerPlayer implements IPlayer
+public class ComputerPlayerimpl implements Player
 {
     private Random randomNumberGen;
     public Move move;
     
-    public ComputerPlayer()
+    public ComputerPlayerimpl()
     {
         randomNumberGen = new Random();
     }

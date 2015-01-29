@@ -11,13 +11,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-public class TextFileRuleSource implements IRuleSource
+public class TextFileRuleSource implements RuleSource
 {
-    private Map<MovePairKey, IGameResult> rules;
+    private Map<MovePairKey, GameResult> rules;
     
-    public TextFileRuleSource(IFileReader ruleFileReader, IMoveSource moveSource) throws FileNotFoundException, IOException, InvalidRuleFormatException, InvalidResultException {
+    public TextFileRuleSource(FileReader ruleFileReader, MoveSource moveSource) throws FileNotFoundException, IOException, InvalidRuleFormatException, InvalidResultException {
         String  ruleLine;
-        rules = new HashMap<MovePairKey, IGameResult>();
+        rules = new HashMap<MovePairKey, GameResult>();
 
         while ((ruleLine = ruleFileReader.readLine()) != null)
         {
@@ -33,7 +33,7 @@ public class TextFileRuleSource implements IRuleSource
         }
     }
     
-    public IGameResult applyRule(Move move1, Move move2) throws MovePairUndefinedException
+    public GameResult applyRule(Move move1, Move move2) throws MovePairUndefinedException
     {
         MovePairKey movePairKey = new MovePairKey(move1, move2);
         if (rules.containsKey(movePairKey))
@@ -41,12 +41,6 @@ public class TextFileRuleSource implements IRuleSource
             return rules.get(movePairKey);
         }
         
-//        MovePairKey movePairKeyReversed = new MovePairKey(move2, move1);
-//        if (!rules.containsKey(movePairKeyReversed))
-//        {
-//            throw new MovePairUndefinedException();
-//        }
-
-        return rules.get(movePairKey);
+        throw new MovePairUndefinedException();
     }
 }

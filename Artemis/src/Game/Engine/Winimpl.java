@@ -1,12 +1,12 @@
 package Game.Engine;
 
-public class Win implements IGameResult
+public class Winimpl implements GameResult
 {
     String resultMessage;
     
-    public Win(String message)
+    public Winimpl(String message)
     {
-        this.resultMessage = "Win, " + message;
+        this.resultMessage = "Winimpl, " + message;
     }
     
     public String getResult()

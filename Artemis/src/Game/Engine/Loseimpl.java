@@ -1,12 +1,12 @@
 package Game.Engine;
 
-public class Lose implements IGameResult
+public class Loseimpl implements GameResult
 {
     private String resultMessage;
     
-    public Lose(String message)
+    public Loseimpl(String message)
     {
-        this.resultMessage = "Lose, " + message;
+        this.resultMessage = "Loseimpl, " + message;
     }
     
     public String getResult()

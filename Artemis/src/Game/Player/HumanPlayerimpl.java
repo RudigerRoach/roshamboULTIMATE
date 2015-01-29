@@ -3,13 +3,12 @@ package Game.Player;
 import Game.Moves.Move;
 
 import java.util.Collection;
-import java.util.Set;
 
-public class HumanPlayer implements IPlayer {
+public class HumanPlayerimpl implements Player {
     private String playerName;
     private Move   playerMove;
 
-    public HumanPlayer(String playerName)
+    public HumanPlayerimpl(String playerName)
     {
         this.playerName = playerName;
     }

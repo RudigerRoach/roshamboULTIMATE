@@ -1,8 +1,5 @@
 package Game.Engine;
 
-public class GameResult implements IGameResult {
-    @Override
-    public String getResult() {
-        return null;
-    }
+public interface GameResult {
+    public String getResult();
 }

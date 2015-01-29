@@ -1,10 +1,10 @@
 package Tests.EngineTests;
 
-import Game.Engine.IFileReader;
+import Game.Engine.FileReader;
 
 import java.util.List;
 
-public class DummyFile implements IFileReader
+public class DummyFile implements FileReader
 {
     private List<String> fileLines;
     private int          filePosition;

@@ -2,7 +2,7 @@ package Game.Engine;
 
 import java.io.IOException;
 
-public interface IFileReader
+public interface FileReader
 {
     String readLine() throws IOException;
 

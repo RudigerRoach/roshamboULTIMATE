@@ -2,16 +2,16 @@ package Game.Engine;
 
 import java.io.*;
 
-public class ConfigFileReader implements IFileReader
+public class ConfigFileReaderimpl implements FileReader
 {
     BufferedReader concreteConfigReader;
     String         fileName;
 
-    ConfigFileReader(String fileName) throws FileNotFoundException
+    ConfigFileReaderimpl(String fileName) throws FileNotFoundException
     {
         this.fileName = fileName;
         File           configFile           = new File(fileName);
-        FileReader     configFileReader     = new FileReader(configFile);
+        java.io.FileReader configFileReader     = new java.io.FileReader(configFile);
         concreteConfigReader = new BufferedReader(configFileReader);
     }
 

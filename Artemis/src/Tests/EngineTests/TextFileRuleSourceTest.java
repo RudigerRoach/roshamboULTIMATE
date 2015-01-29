@@ -15,9 +15,9 @@ public class TextFileRuleSourceTest
     public void GivenAFileReaderWithInvalidRules_WhenATextFileRuleSourceIsConstructedWithTheEmptyDummyFile_ThenAnExceptionShouldBeThrown() throws IOException, InvalidRuleFormatException, InvalidResultException {
         List<String> fileLines = new ArrayList<String>();
         fileLines.add("notehutn");
-        IFileReader fileReader = new DummyFile(fileLines, "test.txt");
-        IMoveSource moveSource = null;
+        FileReader fileReader = new DummyFile(fileLines, "test.txt");
+        MoveSource moveSource = null;
 
-        IRuleSource ruleSource = new TextFileRuleSource(fileReader, moveSource);
+        RuleSource ruleSource = new TextFileRuleSource(fileReader, moveSource);
     }
 }
