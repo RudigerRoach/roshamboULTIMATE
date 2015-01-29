@@ -14,7 +14,7 @@ import Renderer.Renderer;
 import java.io.IOException;
 
 public class GameManager {
-    Renderer.Renderer renderer;
+    Renderer renderer;
 
     FileReader MoveFileReader;
     MoveSource moveSource;

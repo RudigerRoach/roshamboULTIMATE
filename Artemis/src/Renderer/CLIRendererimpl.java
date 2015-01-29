@@ -7,7 +7,7 @@ import Game.Player.Player;
 import java.io.IOException;
 import java.util.*;
 
-public class CLIRendererimpl implements Renderer.Renderer {
+public class CLIRendererimpl implements Renderer {
 
 
     @Override

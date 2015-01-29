@@ -6,7 +6,7 @@ public class Loseimpl implements GameResult
     
     public Loseimpl(String message)
     {
-        this.resultMessage = "Loseimpl, " + message;
+        this.resultMessage = "Lose, " + message;
     }
     
     public String getResult()

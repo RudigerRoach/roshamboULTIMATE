@@ -6,7 +6,7 @@ public class Drawimpl implements GameResult
     
     public Drawimpl(String message)
     {
-        this.resultMessage = "Drawimpl, " + message;
+        this.resultMessage = "Draw, " + message;
     }
     
     public String getResult()

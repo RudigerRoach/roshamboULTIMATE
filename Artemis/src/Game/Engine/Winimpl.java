@@ -6,7 +6,7 @@ public class Winimpl implements GameResult
     
     public Winimpl(String message)
     {
-        this.resultMessage = "Winimpl, " + message;
+        this.resultMessage = "Win, " + message;
     }
     
     public String getResult()
